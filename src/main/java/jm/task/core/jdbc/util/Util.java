@@ -9,10 +9,9 @@ public class Util {
     public Connection getConnection(){
         Connection connection = null;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(url, username, password);
             System.out.println("Connection succesfull!");
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("Connection error!");
         }
